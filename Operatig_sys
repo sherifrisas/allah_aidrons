@@ -1,0 +1,7 @@
+MAX_ALTITUDE = 120  # meters
+MIN_ALTITUDE = 2    # meters
+
+if drone.altitude > MAX_ALTITUDE:
+    trigger_failsafe("Too high!")
+elif drone.altitude < MIN_ALTITUDE:
+    trigger_failsafe("Too low!")
