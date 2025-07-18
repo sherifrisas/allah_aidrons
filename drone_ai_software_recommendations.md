@@ -1,4 +1,4 @@
-# Drone AI Software Stack: Best Recommended Versions
+   wsl --set-default-version 2# Drone AI Software Stack: Best Recommended Versions
 
 ## 1. Operating System
 - **Ubuntu 20.04 LTS (Focal Fossa)**

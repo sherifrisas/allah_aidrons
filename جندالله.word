@@ -1,13 +1,13 @@
 
 1. System Architecture Overview
 graph TD
-    A["Sensors (Camera, Lidar, IMU, GPS)"] --> B["Perception (Object Detection, SLAM)"]
+    A["Sensors (Camera, Lidar, IMU, GLONASS)"] --> B["Perception (Object Detection, SLAM)"]
     B --> C["Decision Making (Path Planning, Obstacle Avoidance)"]
     C --> D["Control (Flight Controller, Motor Commands)"]
     E["User Input (Gesture/Voice)"] --> C
     F["Swarm Communication"] --> C
     
-Sensors (Camera, Lidar, IMU, GPS)
+Sensors (Camera, Lidar, IMU, GLONASS)
 Perception (Object Detection, SLAM)
 Decision Making (Path Planning, Obstacle Avoidance)
 Control (Flight Controller, Motor Commands)
@@ -16,17 +16,17 @@ Swarm Communication
 2. Recommended Hardware
 Onboard Computer: NVIDIA Jetson Nano/Xavier, Raspberry Pi 4, or similar (for AI processing)
 Flight Controller: Pixhawk (ArduPilot or PX4)
-Sensors: Camera (RGB/Depth), Lidar/Ultrasonic, IMU, GPS, Microphone (for voice)
+Sensors: Camera (RGB/Depth), Lidar/Ultrasonic, IMU, GLONASS, Microphone (for voice)
 Wireless Module: WiFi/Telemetry for swarm
 3. Software Stack
 OS: Ubuntu (for Jetson/RPi)
-Middleware: ROS (Robot Operating System) – integrates all modules
+Middleware: ROS (Robot Operating System) – integrates all modules, including the new GLONASS sensor
 AI Frameworks: TensorFlow, PyTorch, OpenCV
 Drone SDK: MAVSDK, DroneKit, or ROS packages for PX4/ArduPilot
 4. Module Breakdown & Integration
 a. SLAM (Mapping & Localization)
 Use RTAB-Map or ORB-SLAM2 (ROS packages)
-Input: Camera/Lidar, IMU, GPS
+Input: Camera/Lidar, IMU, GLONASS
 Output: Real-time map, drone pose
 b. Object Detection/Tracking
 Use YOLOv5 or TensorFlow Object Detection API
